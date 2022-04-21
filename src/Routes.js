@@ -11,7 +11,7 @@ import LoginPage from "./components/pages/LoginPage";
 class Routes extends Component {
     render() {
         return (
-            <PageLayout>
+            
                 <div style={{ margin: '12px',minHeight:"76vh" }}>
                     <Switch>
                         <Route path={"/"} exact component={HomePage}/>
@@ -21,7 +21,7 @@ class Routes extends Component {
                         <Route /*strict*/ component={NoPageFound}/>
                     </Switch>
                 </div>
-            </PageLayout>
+            
         );
     }
 }

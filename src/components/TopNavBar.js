@@ -58,7 +58,7 @@ function TopNavBar(props) {
                 title={<Title level={3} className="m-0">{appTitle}</Title>}
                 extra={(props.env.siderMenuCollapsed)?[
                     <Dropdown key="3" overlay={menu} placement="bottomRight">
-                        <Button ><Icon type="ellipsis" /></Button>
+                        <Button ></Button>
                     </Dropdown>,
                 ]:null}
             />
@@ -72,7 +72,7 @@ function TopNavBar(props) {
                 }
                 extra={[
                     <Dropdown key="3" overlay={menu} placement="bottomRight">
-                        <Button><Icon type="ellipsis" /></Button>
+                        <Button></Button>
                     </Dropdown>
                 ]}
             />

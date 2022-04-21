@@ -21,6 +21,7 @@ function PageLayout(props) {
         <Mobile/>
     ):(<Desktop/>);
 }
+
 const mapStateToProps = (state, props) => {
     return {...state,...props};
 };
