@@ -1,24 +1,11 @@
 import React, {Component} from 'react';
-import {Typography, Icon, Divider, notification, Button} from 'antd';
+import {Typography, Icon, Divider, Button} from 'antd';
 import { Link } from 'react-router-dom';
 import PageLayout from "../PageLayout";
 
 const { Title,Text } = Typography;
 
-const openNotification = (url,fileName,isFolder) => {
-    const key = `open${Date.now()}`;
-    const btn = (
-        <Button type="primary" size="small" onClick={() => {notification.close(key);window.open(url,'_blank');}}>
-            Open
-        </Button>
-    );
-    notification.open({
-        message: <Typography>{`Open `}<Text mark>{`${fileName}`}</Text> {`${isFolder?"Folder":"File"} on Github?`}<Icon type="github" style={{paddingLeft:"10px"}}/></Typography>,
-        description: `A new tab will open with ${url}`,
-        btn,
-        key,
-    });
-};
+
 
 function SettingsPage(props) {
 

@@ -1,6 +1,11 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
-import { Layout, Menu, Icon, Row} from 'antd';
+import { Layout, Menu, Row} from 'antd';
+import {
+    AppstoreOutlined,
+    SettingOutlined,
+    LinkOutlined,
+} from '@ant-design/icons';
 import {setCollapsed} from "../redux/actions/env-actions";
 import {injectIntl} from 'react-intl';
 import { Link, withRouter } from 'react-router-dom';
@@ -41,24 +46,23 @@ function NavBar(props) {
             style={{ zIndex: 10}}
         >
             <Row className="logo" type="flex" justify="center" align="top" style={{margin: 10}}>
-                <Link to="/"><img width={40} src="favicon2.png" /></Link>
+                <Link to="/"><img width={40} src="favicon.png" /></Link>
             </Row>
             <Menu theme={navBarTheme} defaultSelectedKeys={[props.location.pathname]} mode="inline" style={menuStyle}>
                 <Menu.Item key="/">
                     <Link to="/">
-                        <Icon type="home" />
+                        <AppstoreOutlined />
                         <span>{props.intl.messages["nav.home"]}</span>
                     </Link>
                 </Menu.Item>
-                <Menu.Item key="2">
+                {/*<Menu.Item key="2">
                     <Link to="/products">
-                        <Icon type="desktop" />
                         <span>{props.intl.messages["nav.products"]}</span>
                     </Link>
-                </Menu.Item>
+                </Menu.Item>*/}
                 <Menu.Item key="/settings">
                     <Link to="/settings">
-                        <Icon type="user" />
+                        <SettingOutlined />
                         <span>{props.intl.messages["nav.settings"]}</span>
                     </Link>
                 </Menu.Item>

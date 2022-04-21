@@ -17,9 +17,9 @@ import ConnectedIntlProvider from './components/ConnectedIntlProvide';
 import {BrowserRouter as Router} from "react-router-dom";
 
 
-if (process.env.NODE_ENV !== "production") {
-    import ('antd/dist/antd.css');
-}
+// if (process.env.NODE_ENV !== "production") {
+//     import ('antd/dist/antd.css');
+// }
 
 
 ReactDOM.render(
