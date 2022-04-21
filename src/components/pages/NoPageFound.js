@@ -1,18 +1,16 @@
 import React from 'react';
-import {Empty,Button} from "antd";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { Empty } from "antd";
 
 function NoPageFound(props) {
         return (
             <div>
-                No Page Found
                 <Empty description={
                     <span>
-                        We couldn't the page you are looking for. Sorry.
+                        We couldn't load the page you are looking for. Sorry.
                     </span>
                 }>
-                    <Button><Link to={"/"}>Go Home</Link></Button>
+                    <Link to={"/"}>Go Home</Link>
                 </Empty>
             </div>
         );

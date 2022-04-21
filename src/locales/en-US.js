@@ -2,8 +2,8 @@ import home from "./en-US/home";
 import nav from "./en-US/nav";
 
 const messages_en = {
-    "app.title": "Handsome Boilerplate",
-    "app.subtitle": "Let's Start!",
+    "app.title": "Compare Price",
+    "app.subtitle": "",
     "app.language": "Language",
     "app.OK": "OK",
     "app.Return": "Return",

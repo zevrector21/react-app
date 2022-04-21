@@ -1,17 +1,11 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
-
-import { Layout, Menu, Icon} from 'antd';
-
+import { Layout, Menu, Icon, Row} from 'antd';
 import {setCollapsed} from "../redux/actions/env-actions";
-
 import {injectIntl} from 'react-intl';
-
 import { Link, withRouter } from 'react-router-dom';
 
-const {
-    Sider,
-} = Layout;
+const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 
@@ -33,7 +27,7 @@ function NavBar(props) {
             collapsible:true
             }:
         {collapsible:true};
-    const navBarTheme = "light";
+    const navBarTheme = "dark";
     const menuStyle = { // laggy for now
        // position:'fixed',overflow: "hidden !important",maxWidth:"200px"
     };
@@ -46,37 +40,29 @@ function NavBar(props) {
             theme={navBarTheme}
             style={{ zIndex: 10}}
         >
-
-            <div className="logo"/>
+            <Row className="logo" type="flex" justify="center" align="top" style={{margin: 10}}>
+                <Link to="/"><img width={40} src="favicon2.png" /></Link>
+            </Row>
             <Menu theme={navBarTheme} defaultSelectedKeys={[props.location.pathname]} mode="inline" style={menuStyle}>
                 <Menu.Item key="/">
                     <Link to="/">
                         <Icon type="home" />
-                        <span>{props.intl.messages["nav.Home"]}</span>
+                        <span>{props.intl.messages["nav.home"]}</span>
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                    <Icon type="desktop" />
-                    <span>{props.intl.messages["nav.Test"]}</span>
+                    <Link to="/products">
+                        <Icon type="desktop" />
+                        <span>{props.intl.messages["nav.products"]}</span>
+                    </Link>
                 </Menu.Item>
-                <SubMenu
-                    key="sub1"
-                    title={<span><Icon type="user" /><span>{props.intl.messages["nav.Test"]}</span></span>}
-                >
-                    <Menu.Item key="3">{props.intl.messages["nav.Test"]}</Menu.Item>
-                    <Menu.Item key="4">{props.intl.messages["nav.Test"]}</Menu.Item>
-                    <Menu.Item key="5">{props.intl.messages["nav.Test"]}</Menu.Item>
-                </SubMenu>
-
-                    <Menu.Item key="/getting-started">
-                        <Link to="/getting-started">
-                            <Icon type="file" />
-                            <span>{props.intl.messages["nav.gettingStarted"]}</span>
-                        </Link>
-                    </Menu.Item>
-
+                <Menu.Item key="/settings">
+                    <Link to="/settings">
+                        <Icon type="user" />
+                        <span>{props.intl.messages["nav.settings"]}</span>
+                    </Link>
+                </Menu.Item>
             </Menu>
-
         </Sider>
 
 

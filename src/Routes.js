@@ -1,23 +1,27 @@
 import React, {Component} from 'react';
 import { Route, Switch} from "react-router-dom";
+import PageLayout from "./components/PageLayout";
 // Pages
 import HomePage from "./components/pages/HomePage";
 import NoPageFound from "./components/pages/NoPageFound";
-import GettingStarted from "./components/pages/GettingStarted";
-
+import SettingsPage from "./components/pages/SettingsPage";
+import LoginPage from "./components/pages/LoginPage";
 
 
 class Routes extends Component {
     render() {
         return (
-            <div style={{ margin: '18px 12px 0',minHeight:"76.1vh" }}>
-                <Switch>
-                    <Route path={"/"} exact /*strict*/ component={HomePage}/>
-                    <Route path={"/getting-started"} exact /*strict*/ component={GettingStarted}/>
+            <PageLayout>
+                <div style={{ margin: '12px',minHeight:"76vh" }}>
+                    <Switch>
+                        <Route path={"/"} exact component={HomePage}/>
+                        <Route path={"/settings"} exact component={SettingsPage}/>
+                        <Route path={"/login"} exact component={LoginPage}/>
 
-                    <Route /*strict*/ component={NoPageFound}/>
-                </Switch>
-    </div>
+                        <Route /*strict*/ component={NoPageFound}/>
+                    </Switch>
+                </div>
+            </PageLayout>
         );
     }
 }

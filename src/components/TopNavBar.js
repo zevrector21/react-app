@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import {setLang} from "../redux/actions/env-actions";
 
-import {PageHeader, Button, Dropdown, Menu, Icon,Modal,Radio,message} from 'antd';
+import {PageHeader, Button, Dropdown, Menu, Icon,Modal,Radio,message, Typography } from 'antd';
 
 import {injectIntl} from 'react-intl';
 
@@ -12,12 +12,12 @@ import { withRouter } from 'react-router-dom';
 
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
+const { Title,Text } = Typography;
 
 const menu = (
     <Menu>
-        <Menu.Item key="11">Operation</Menu.Item>
-        <Menu.Item key="22">Operation</Menu.Item>
-        <Menu.Item key="33">Operation</Menu.Item>
+        <Menu.Item key="11">Products</Menu.Item>
+        <Menu.Item key="33">Log out</Menu.Item>
     </Menu>
 );
 
@@ -49,23 +49,17 @@ function TopNavBar(props) {
         pathName = pathName.replace("-"," ");
         return pathName;
     };
-        
-    const isMainPage = ["","/"].includes(props.history.location.pathname );
-    const pageHeaderOnBack = isMainPage?{}:{onBack:() => window.history.back()};
+
+    const appTitle = 'Compare Product Price with Amazon'
 
     const MobileTopNavBar = () => (
         <div>
             <PageHeader
-                {...pageHeaderOnBack}
-                title={<div style={{marginTop:"7px"}}>{props.intl.messages["app.title"]}</div>}
+                title={<Title level={3} className="m-0">{appTitle}</Title>}
                 extra={(props.env.siderMenuCollapsed)?[
-
                     <Dropdown key="3" overlay={menu} placement="bottomRight">
                         <Button ><Icon type="ellipsis" /></Button>
                     </Dropdown>,
-                    <Button key="4" type="primary" onClick={showModal}>
-                        {props.intl.messages["app.language"]}
-                    </Button>,
                 ]:null}
             />
         </div>
@@ -73,18 +67,13 @@ function TopNavBar(props) {
     const DesktopTopNavBar = () => (
         <div>
             <PageHeader
-                {...pageHeaderOnBack}
-                title={<div style={{marginTop:"7px"}}>{props.intl.messages["app.title"]}</div>}
-                subTitle={props.intl.messages["app.subtitle"]}
+                title={
+                    <Title level={3} className="m-0">{appTitle}</Title>
+                }
                 extra={[
-                    <Button key="1">Operation</Button>,
-                    <Button key="2">Operation</Button>,
                     <Dropdown key="3" overlay={menu} placement="bottomRight">
                         <Button><Icon type="ellipsis" /></Button>
-                    </Dropdown>,
-                    <Button key="4" type="primary" onClick={showModal}>
-                        {props.intl.messages["app.language"]}
-                    </Button>,
+                    </Dropdown>
                 ]}
             />
         </div>

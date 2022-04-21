@@ -1,7 +1,8 @@
 const nav = {
-    "nav.Home": "Home",
-    "nav.Test": "Test",
+    "nav.home": "Home",
+    "nav.products": "Products",
     "nav.gettingStarted": "Getting Started",
+    "nav.settings": "Settings",
 };
 
 export default nav;

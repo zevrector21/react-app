@@ -8,3 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.m-0 {
+  margin: 0 !important;
+}
+
+.d-flex {
+  display:  flex;
+  align-items: center;
+}
