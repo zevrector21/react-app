@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiUrl = `http://3.85.32.21/api/`
+const apiUrl = `http://3.85.32.21/v1/api/`
 
 const handleErrors = err => {
   throw err
